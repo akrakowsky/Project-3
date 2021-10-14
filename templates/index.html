@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UFO Sightings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
-    <!-- jinja formatting for Flask -->
-    <div>{{ data }}</div>
-
-    <!-- fruit dropdown -->
-    <select id="fruit" onchange="drawType(this.value)">
-        <option selection="selected" value="apples">Apple Chart</option>
-        <option value="mango">Mango Chart</option>
-        <option value="oranges">Orange Chart</option>
-    </select>
-
-    <!-- cost dropdown -->
-    <select id="fruitValue" onchange="drawVal(this.value)">
-        <option selection="selected" value="1">>$1</option>
-        <option value="0.25">>$0.25</option>
-    </select>
-    
-    <!-- plots -->
-    <div id="fruitBar"></div>
-    <div id="fruitVal"></div>
-    
-    <!-- scripts -->
-    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
-
-    <!-- js syntax for Flask -->
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>UFO Sightings</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape UFO Sightings</a></p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <h2>Title</h2>
+          <h4>{{mars.news_title}}</h4>
+          <p>{{mars.new_paragraph}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Title</h2>
+        
+      </div>
+      <div class="col-md-4">
+        <h4>Title</h4>
+        <p>{{mars.mars_facts | safe }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">Title</h2>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
