@@ -1,8 +1,9 @@
 # Project-3
 
-# Table of contents
+# Table of Contents
 
 ## A. Project 3 UFO Sightings
+Use data visualizations to tell a story
 
 1. static
     1. js
