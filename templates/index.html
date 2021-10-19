@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>UFO Sightings</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UFO Sightings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<body>
-  <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>UFO Sightings</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape UFO Sightings</a></p>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-          <h2>Title</h2>
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+    
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1>UFO Sightings</h1>
+      
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-8">
-        <h2>Title</h2>
-        
-      </div>
-      <div class="col-md-4">
-        <h4>Title</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-center">Title</h2>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+  <body>
+    <div id="map"></div>
+
+    <!-- JavaScript file -->
+    <!-- <script type="text/javascript" src="static/js/just-crime.js"></script> -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+  </body>
