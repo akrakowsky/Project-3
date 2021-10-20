@@ -1,7 +1,7 @@
 var myMap = L.map("map", {
-    center: [31.30, 96.25],
-    zoom: 8
-  });
+    center: [40.7, -73.95],
+    zoom: 11
+});
   
 // Adding the tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 d3.json("/data").then(function(data) {
     // console.log(data);
-    // console.log(data.map(x => x.LATITUDE))
+    // console.log(data.map(x => x.LATITUDE)
 
     var heatArray = data.map(ufo => [ufo.LATITUDE, ufo.LONGITUDE]);
     // console.log(heatArray)
@@ -21,3 +21,4 @@ d3.json("/data").then(function(data) {
     }).addTo(myMap);
 
 });
+
