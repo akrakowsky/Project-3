@@ -14,3 +14,9 @@ fig = px.pie(df, values='ID', names='Shape',
              hover_data=['ID'], labels={'ID':'Total'})
 fig.update_traces(textposition='inside', textinfo='percent+label')
 fig.show()
+
+# Create choorpleth
+sun_df = pd.read_csv("ufo_sightings_locations.csv")
+#print(sun_df)
+sun = px.sunburst(sun_df, path=["State","City"], hover_name="City", color="ID", height=700)
+sun.show()
