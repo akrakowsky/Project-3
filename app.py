@@ -20,22 +20,5 @@ def db_data():
     # print('parsed: ', parsed)
     return jsonify(parsed)
 
-@app.route("/chart")
-def chart():
-    ufo_sightings = mongo.db.ufo_sightings.find_one()
-    return render_template("index.html", ufo_sightings=ufo_sightings)
-    # Filter the data
-    df = pd.read_csv("shapes.csv")
-    df = df[df['ID']>=5]
-    #print(df)
-
-    #Create the pie chart
-    fig = px.pie(df, values='ID', names='Shape',
-                title='Shapes of UFO Sightings',
-                hover_data=['ID'], labels={'ID':'Total'})
-    fig.update_traces(textposition='inside', textinfo='percent+label')
-    #fig.show()
-    return  html.Div([dcc.Graph(figure=fig)])
-
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UFO Sightings</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}" type="text/css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">UFO Sightings</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+        </nav>
+    
+          <main>
+              <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="col-md-12 col-sm-12 col-xm-12">
+                          <div class="ml-auto mr-auto">
+                            <div class="row p-4">
+                              <div class="card m-auto" style="width: 90;">
+                                <div class="card-body">
+                                  <div id="chart1"></div>
+                                  <p class="text-center">This pie chart is showing the reported shapes of the UFO sightings with the count and percentage. The most popular shape is Light. Sighting reports were created by viewers and submitted as free-text. This causes a variety in the data provided.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="col-md-12 col-sm-12 col-xm-12">
+                          <div class="ml-auto mr-auto">
+                            <div class="row p-4">
+                              <div class="card m-auto" style="width: 90;">
+                                <div class="card-body">
+                                  <div id="chart2"></div>
+                                  <p class="text-center">The sunburst chart shows all of the states in the center and the cities on the outer edge. The states and cities are ordered from most to least sightings reported counter-clockwise. The state can be selected to show an expanded view of the state and the cities.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xm-12">
+                      <div class="ml-auto mr-auto">
+                        <div class="row p-4">
+                          <div class="card m-auto" style="width: 90;">
+                            <div class="card-body">
+                              <div id="chart3"></div>
+                              <p class="text-center">This scatter plot list all states in the US that have a reported sighting. The y column is the total of sightings per state.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </main>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibx39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script type="text/javascript">
+            var fig1 = {{ fig1JSON | safe}};
+            Plotly.plot("chart1", fig1,{});
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>UFO Sightings in the US</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+            var fig2 = {{ fig2JSON | safe}};
+            Plotly.plot("chart2", fig2,{});
 
-<body>
+            var fig3 = {{ fig3JSON | safe}};
+            Plotly.plot("chart3", fig3,{});
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>UFO Sightings Dashboard</h1>
-        <p>Use the interactive charts to explore the collected UFO sightings data from nuforc.org.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-        <p>{{ufo_sightings.chart | safe }}</p>
-      </div>
-      <div class="col-md-5">
-        <div id="sunburst"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="scatter"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/app.py"></script>
-  
-</body>
-
+        </script>
+    </body>
 </html>
