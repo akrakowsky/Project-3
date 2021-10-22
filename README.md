@@ -29,6 +29,19 @@ Use data visualizations to tell a story
 
 -----------
 ## Process
+
+  - The csv file provided in class did not include recent sightings as the data ended in 2014. To gather all of the current and previous posts, the NUFORC site was scraped using Jupyter Notebook. Scrape_ufo.ipynb has the documentation for scraping the site. The data was pulled from the Event Date Section as this had all of the fields listed in the table. Data was seperated to individual links for each month of the year. An executable path was created and a loop started to finad all table data(td) and pull all of the data into a dataframe.
+  - Cleaning the data. The data frame was cleaned in the Jupyter Notebook first by creating a new column called locations and combing the city and state. All sightings without a reported city and state were dropped. The csv file us_cities.csv from https://github.com/kelvins/US-Cities-Database/blob/main/csv/us_cities.csv was merged to the data frame to add latitude and longitude to each location. This provided over 100,000 reports and was saved as a csv. To help with the flask app this data was also uploaded to MongoDB Compass
+  - gsfgg
+  - gsfgdsfs
+  - sgsfsg
+
+-----------
+## Trouble-shooting
+
+-----------
+## Considerations
+
 -----------
 
 ## Resources:
