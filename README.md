@@ -31,13 +31,16 @@ Use data visualizations to tell a story
 ## Process
 
   - The csv file provided in class did not include recent sightings as the data ended in 2014. To gather all of the current and previous posts, the NUFORC site was scraped using Jupyter Notebook. Scrape_ufo.ipynb has the documentation for scraping the site. The data was pulled from the Event Date Section as this had all of the fields listed in the table. Data was seperated to individual links for each month of the year. An executable path was created and a loop started to finad all table data(td) and pull all of the data into a dataframe.
-  - Cleaning the data. The data frame was cleaned in the Jupyter Notebook first by creating a new column called locations and combing the city and state. All sightings without a reported city and state were dropped. The csv file us_cities.csv from https://github.com/kelvins/US-Cities-Database/blob/main/csv/us_cities.csv was merged to the data frame to add latitude and longitude to each location. This provided over 100,000 reports and was saved as a csv. To help with the flask app this data was also uploaded to MongoDB Compass
-  - gsfgg
-  - gsfgdsfs
-  - sgsfsg
+  - Cleaning the data. The data frame was cleaned in the Jupyter Notebook first by creating a new column called locations and combing the city and state. All sightings without a reported city and state were dropped. The csv file us_cities.csv from https://github.com/kelvins/US-Cities-Database/blob/main/csv/us_cities.csv was merged to the data frame to add latitude and longitude to each location. This provided over 100,000 reports and was saved as a csv. To help with the flask app this data was also uploaded to MongoDB Compass.
+  - In MongoDb the data was converted to a JSON file.
+  - Visual Studio Code was used to create the python and html files to create the flask app. 
+     - app.py: Used to upload the information in MongoDB.
+     - run.py: The flask app was initialized to create the 3 interactive visualizations by pulling the data. Plotly express was used to create the charts as it has a variety of options and added interction for the viewer. Chart 1: Pie chart that pulled each reported shape and the value. Chart 2: Sunburst plot of each state and the cities within each state. Chart 3: Scatter plot of each state with the value of reported sightings.
+     - index.html: Bootstrap was used to format the page and create a container for the visuals. A brief statement about the charts were added as paragraphs. To keep the charts as interactive versus static, the figures were created as variables and added as script. 
+     - main.css: is the styling sheet that formats the landing page. This sheet pulls in font styles provided by Code with Prince.
 
 -----------
-## Trouble-shooting
+## Problems during the project
 
 -----------
 ## Considerations
