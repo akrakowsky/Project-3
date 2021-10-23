@@ -21,6 +21,7 @@ Use data visualizations to tell a story
 8. shapes.csv
 9. License
 10. ReadMe
+11. UFOSightingsPPT.pdf
 
 -----------
 ## Introduction
